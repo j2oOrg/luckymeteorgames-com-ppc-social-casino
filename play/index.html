@@ -3,358 +3,233 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Play — JackpotHub.cloud</title>
-  <meta name="description" content="Play free-to-play social casino style demos on JackpotHub.cloud. No real-money gambling or prizes. 18+ only.">
+  <title>Play — Lucky Meteor Games</title>
+  <meta name="description" content="Play free-to-play, social casino-style experiences on luckymeteorgames.com. No real-money gambling or prizes. 18+ only.">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
 :root{
-  --bg: #060a14;
-  --panel: rgba(255,255,255,0.05);
-  --panel-strong: rgba(255,255,255,0.08);
-  --text: #e9eeff;
-  --muted: #b7c2db;
-  --heading: #fdf6ff;
-  --accent: #f5c452;
-  --accent-2: #70f0c7;
-  --border: rgba(255,255,255,0.12);
-  --radius: 14px;
-  --font-heading: "Space Grotesk", "Inter", system-ui, sans-serif;
-  --font-body: "Poppins", "Inter", system-ui, sans-serif;
-  --shadow: 0 24px 70px rgba(0,0,0,0.5);
+  --bg:#0b0f1d;
+  --panel:#0f172a;
+  --panel-strong:#0c1222;
+  --text:#dfe6fb;
+  --muted:#9fb1d8;
+  --heading:#ffffff;
+  --accent:#7cf0c9;
+  --accent-2:#ffcc6f;
+  --border:rgba(255,255,255,0.12);
+  --radius:14px;
+  --shadow:0 24px 60px rgba(0,0,0,0.55);
+  --font-heading:"Space Grotesk","Inter",system-ui,sans-serif;
+  --font-body:"Poppins","Inter",system-ui,sans-serif;
 }
 
 *{box-sizing:border-box}
-body{
+body.lmg-body-f42t{
   margin:0;
   font-family:var(--font-body);
   background:
-    radial-gradient(circle at 15% 10%, rgba(112,240,199,0.08), transparent 28%),
-    radial-gradient(circle at 80% 8%, rgba(245,196,82,0.12), transparent 30%),
-    linear-gradient(140deg, #070c19, #050812 60%, #0b1021);
+    radial-gradient(circle at 15% 10%, rgba(124,240,201,0.12), transparent 30%),
+    radial-gradient(circle at 80% 8%, rgba(255,204,111,0.16), transparent 32%),
+    linear-gradient(135deg,#0b0f1d,#0a0d1a 60%,#0d1428);
   color:var(--text);
-  line-height:1.65;
+  line-height:1.7;
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
 }
-a{color:var(--accent-2); text-decoration:none; transition:color .18s, opacity .18s}
-a:hover{color:var(--accent); opacity:0.9}
-.link-accent{color:var(--accent); font-weight:700}
-.link-accent:hover{color:var(--accent-2)}
+a{color:var(--accent); text-decoration:none; transition:color .2s ease, opacity .2s ease}
+a:hover{color:var(--accent-2); opacity:0.9}
+.lmg-accentlink-y3tw{color:var(--accent-2); font-weight:700}
+.lmg-container-y9sd{width:min(1120px,100% - 2.4rem); margin:0 auto}
 img{max-width:100%; display:block}
 
-.container{width:min(1140px, 100% - 2rem); margin:0 auto}
-
-.notice-banner{
-  background:linear-gradient(135deg, var(--accent), var(--accent-2));
-  color:#031017;
-  padding:0.55rem 0;
+.lmg-banner-c3xp{
+  background:linear-gradient(120deg, rgba(124,240,201,0.22), rgba(255,204,111,0.28));
+  color:#0a0d1a;
+  padding:0.6rem 0;
   text-align:center;
   font-weight:700;
-  border-bottom:1px solid rgba(0,0,0,0.2);
-  box-shadow:0 10px 28px rgba(0,0,0,0.35);
+  letter-spacing:0.2px;
+  border-bottom:1px solid rgba(0,0,0,0.25);
+  box-shadow:0 16px 34px rgba(0,0,0,0.35);
   position:relative;
-  z-index:70;
+  z-index:80;
 }
-.banner-inner{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:0.65rem;
-  flex-wrap:wrap;
-  font-size:0.97rem;
-}
-.banner-pill{
-  background:rgba(0,0,0,0.12);
-  color:#031017;
-  padding:0.35rem 0.7rem;
-  border-radius:999px;
-  font-weight:800;
-  letter-spacing:0.5px;
-}
+.lmg-banner-inner-p8vz{display:flex; gap:0.6rem; justify-content:center; align-items:center; flex-wrap:wrap; font-size:0.95rem}
+.lmg-pill-r5gj{background:rgba(10,13,26,0.12); padding:0.32rem 0.72rem; border-radius:999px; font-weight:800}
 
-.jackpothub-cloud-nav{
-  background:rgba(6,10,20,0.92);
+.lmg-nav-t7uq{
+  background:rgba(10,14,26,0.86);
   border-bottom:1px solid var(--border);
-  backdrop-filter:blur(14px);
+  backdrop-filter:blur(16px);
   position:sticky;
   top:0;
-  z-index:60;
-  padding:0.85rem 0;
+  z-index:70;
+  padding:0.9rem 0;
 }
-.jackpothub-cloud-nav .navbar-brand{
-  display:flex;
-  align-items:center;
-  gap:0.65rem;
-  padding:0;
-}
-.brand-logo{
-  width:132px;
-  height:auto;
-  display:block;
-  border-radius:12px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.45);
-}
-.jackpothub-cloud-nav .nav-link{
-  color:var(--text);
-  font-weight:600;
-  margin:0 0.35rem;
-  padding:0.35rem 0.65rem;
-  border-radius:10px;
-  transition:background .15s, color .15s;
-}
-.jackpothub-cloud-nav .nav-link.active,
-.jackpothub-cloud-nav .nav-link:hover{
-  background:var(--panel);
-  color:var(--accent);
-}
-.navbar-toggler{
-  border:1px solid var(--border);
-  color:var(--text);
-}
-.navbar-toggler:focus{box-shadow:0 0 0 3px rgba(112,240,199,0.18)}
+.lmg-brand-ks9d{display:flex; align-items:center; gap:0.65rem; padding:0; color:var(--heading); font-weight:800; letter-spacing:0.4px}
+.lmg-logo-ks9d{width:122px; border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,0.5)}
+.lmg-navlink-e1um{color:var(--text)!important; font-weight:600; margin:0 0.35rem; padding:0.4rem 0.7rem!important; border-radius:10px; transition:background .16s,color .16s}
+.lmg-navlink-e1um:hover,.lmg-navlink-e1um.active{background:rgba(255,255,255,0.06); color:var(--accent)!important}
+.navbar-toggler{border:1px solid var(--border); color:var(--text)}
+.navbar-toggler:focus{box-shadow:0 0 0 3px rgba(124,240,201,0.25)}
 
-.jackpothub-cloud-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:0.4rem;
-  padding:0.78rem 1.6rem;
-  border-radius:12px;
-  font-weight:700;
-  border:1px solid transparent;
-  cursor:pointer;
-  transition:transform .16s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-  text-decoration:none;
+.lmg-btn-h3za{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:0.4rem; padding:0.78rem 1.55rem;
+  border-radius:12px; border:1px solid transparent;
+  font-weight:700; cursor:pointer; text-decoration:none;
+  transition:transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease, border .2s ease;
 }
-.jackpothub-cloud-btn.primary{
-  background:linear-gradient(135deg, var(--accent), var(--accent-2));
-  color:#060a14;
-  box-shadow:0 14px 36px rgba(0,0,0,0.4);
-}
-.jackpothub-cloud-btn.primary:hover{transform:translateY(-2px)}
-.jackpothub-cloud-btn.outline{
-  background:var(--panel);
-  border-color:var(--border);
-  color:var(--text);
-}
-.jackpothub-cloud-btn.outline:hover{color:var(--accent)}
+.lmg-btn-primary-j1po{background:linear-gradient(120deg,var(--accent),var(--accent-2)); color:#0a0d1a; box-shadow:0 14px 34px rgba(0,0,0,0.45)}
+.lmg-btn-primary-j1po:hover{transform:translateY(-2px)}
+.lmg-btn-ghost-q2km{background:rgba(255,255,255,0.06); border-color:var(--border); color:var(--text)}
+.lmg-btn-ghost-q2km:hover{color:var(--accent-2); border-color:rgba(255,255,255,0.2)}
 
-.section-title{
-  font-family:var(--font-heading);
-  color:var(--heading);
-  font-size:2.1rem;
-  margin:0 0 0.45rem;
-}
-.section-sub{margin:0 0 1rem; color:var(--muted)}
+.lmg-section-s3vm{padding:3.4rem 0}
+.lmg-section-alt-q9fv{background:rgba(255,255,255,0.02); border-block:1px solid var(--border)}
+.lmg-title-r4ne{font-family:var(--font-heading); color:var(--heading); font-size:2.3rem; margin:0 0 0.4rem}
+.lmg-sub-w8cl{color:var(--muted); margin:0 0 1rem}
+.lmg-grid-ux1p{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:1.4rem}
+.lmg-card-m5re{background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:1.3rem; box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease}
+.lmg-card-m5re:hover{transform:translateY(-4px); box-shadow:0 18px 46px rgba(0,0,0,0.55)}
+.lmg-icon-v2yz{font-size:1.8rem; color:var(--accent-2); margin-bottom:0.4rem}
 
-.jackpothub-cloud-play{
-  padding:3.5rem 0;
-  text-align:center;
-}
-.game-wrapper{
-  margin:2rem auto;
-  display:flex;
-  justify-content:center;
-}
-.game-wrapper > .w-100{
-  width:100%;
-  max-width:920px;
-  text-align:center;
-}
-.game-frame{
-  position:relative;
-  width:100%;
-  max-width:920px;
-  border-radius:14px;
-  overflow:hidden;
-  background:linear-gradient(160deg, rgba(245,196,82,0.14), rgba(112,240,199,0.08));
-  border:1px solid var(--border);
-  box-shadow:0 16px 40px rgba(0,0,0,0.45);
-}
-.game-frame::before{content:""; display:block; padding-top:56.25%;}
-.game-frame iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:0;
-}
-.game-caption{
-  margin-top:0.5rem;
-  color:var(--muted);
-  font-weight:600;
-}
+.lmg-embedwrap-k9tj{margin:1.6rem auto; display:flex; justify-content:center}
+.lmg-embed-box-s4hp{position:relative; width:100%; max-width:920px; border-radius:14px; overflow:hidden; background:linear-gradient(150deg, rgba(255,204,111,0.16), rgba(124,240,201,0.12)); border:1px solid var(--border); box-shadow:var(--shadow)}
+.lmg-embed-box-s4hp::before{content:""; display:block; padding-top:56.25%}
+.lmg-embed-box-s4hp iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+.lmg-caption-d3uz{color:var(--muted); font-weight:600; text-align:center; margin:0.5rem 0 0}
 
-.jackpothub-cloud-footer{
-  background:rgba(6,10,20,0.95);
-  color:var(--text);
-  text-align:center;
-  padding:3.2rem 1rem 2.4rem;
-  border-top:1px solid var(--border);
-  position:relative;
-  overflow:hidden;
-}
-.jackpothub-cloud-footer::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(circle at 50% 20%, rgba(245,196,82,0.04), transparent 65%);
-  z-index:0;
-}
-.jackpothub-cloud-footer .container{position:relative; z-index:1}
-.footer-brand{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:0.7rem;
-  margin-bottom:1rem;
-}
-.footer-links{
-  display:flex;
-  justify-content:center;
-  gap:0.85rem;
-  flex-wrap:wrap;
-  padding:0;
-  margin:0 0 1rem;
-  list-style:none;
-}
-.footer-links a{
-  color:var(--accent);
-  font-weight:600;
-}
-.footer-links a:hover{color:var(--accent-2)}
-.footer-copy{
-  color:var(--muted);
-  margin:0;
-}
+.lmg-footer-f6at{background:rgba(10,14,26,0.92); color:var(--text); text-align:center; padding:3rem 1rem 2.2rem; border-top:1px solid var(--border); position:relative; overflow:hidden}
+.lmg-footer-f6at::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 15%, rgba(255,204,111,0.08), transparent 65%); z-index:0}
+.lmg-footer-f6at .lmg-container-y9sd{position:relative; z-index:1}
+.lmg-footerbrand-i3ve{display:flex; align-items:center; justify-content:center; gap:0.65rem; margin-bottom:1rem}
+.lmg-footerlinks-l9cu{display:flex; justify-content:center; gap:0.85rem; flex-wrap:wrap; list-style:none; padding:0; margin:0 0 1rem}
+.lmg-footerlinks-l9cu a{color:var(--accent); font-weight:600}
+.lmg-footerlinks-l9cu a:hover{color:var(--accent-2)}
+.lmg-footercopy-y0va{color:var(--muted); margin:0}
 
-.jackpothub-cloud-scroll{
-  position:fixed;
-  right:22px;
-  bottom:22px;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  border:none;
-  background:var(--accent);
-  color:#060a14;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
+.lmg-scroll-x0fz{
+  position:fixed; right:20px; bottom:20px;
+  width:46px; height:46px; border-radius:50%; border:none;
+  background:var(--accent-2); color:#0a0d1a;
+  display:flex; align-items:center; justify-content:center;
   box-shadow:0 14px 34px rgba(0,0,0,0.55);
-  opacity:0;
-  visibility:hidden;
-  transition:all .16s;
-  z-index:90;
+  opacity:0; visibility:hidden; transition:all .16s; z-index:90; cursor:pointer;
 }
-.jackpothub-cloud-scroll.show{opacity:1; visibility:visible}
-.jackpothub-cloud-scroll:hover{background:var(--accent-2)}
+.lmg-scroll-x0fz.show{opacity:1; visibility:visible}
+.lmg-scroll-x0fz:hover{background:var(--accent)}
 
-.sr-only{
-  position:absolute;
-  width:1px;
-  height:1px;
-  padding:0;
-  margin:-1px;
-  overflow:hidden;
-  clip:rect(0,0,0,0);
-  border:0;
-}
+.sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0}
 
 @media (max-width: 768px){
-  .game-frame{max-width:100%}
-  .jackpothub-cloud-nav{padding:0.75rem 0}
-}
-@media (max-width: 576px){
-  .brand-logo{width:114px}
+  .lmg-title-r4ne{font-size:2rem}
+  .lmg-logo-ks9d{width:112px}
 }
   </style>
 </head>
-<body class="jackpothub-cloud jackpothub-cloud-o9e2">
+<body class="lmg-body-f42t">
 
-<!-- Persistent responsible-play banner -->
-<div class="notice-banner notice-banner-d4v6">
-  <div class="container container-n5s9 banner-inner banner-inner-e0g3">
-    <span class="banner-pill banner-pill-u5l2">18+</span>
-    <span>JackpotHub is a free-to-play social casino experience. No real-money gambling or prizes. 18+ only. Please play responsibly.</span>
+<div class="lmg-banner-c3xp">
+  <div class="lmg-container-y9sd lmg-banner-inner-p8vz">
+    <span class="lmg-pill-r5gj">18+</span>
+    <span>Lucky Meteor Games is a free-to-play social casino-style experience. No real-money gambling or prizes. 18+ only. Please play responsibly.</span>
   </div>
 </div>
 
-<!-- Header / navigation -->
-<nav class="navbar navbar-h1d6 navbar-expand-lg navbar-expand-lg-x1e0 jackpothub-cloud-nav jackpothub-cloud-nav-s2b8">
-  <div class="container container-n5s9 d-flex d-flex-l2v1 align-items-center align-items-center-i0e4 justify-content-between justify-content-between-u9t9">
-    <a class="navbar-brand navbar-brand-e4n4" href="/">
-      <img class="brand-logo brand-logo-y2l5" src="../assets/img.png" alt="JackpotHub logo">
-      <span class="sr-only sr-only-l6n5">JackpotHub.cloud</span>
+<nav class="navbar navbar-expand-lg lmg-nav-t7uq">
+  <div class="lmg-container-y9sd d-flex align-items-center justify-content-between">
+    <a class="navbar-brand lmg-brand-ks9d" href="/">
+      <img class="lmg-logo-ks9d" src="../assets/img.png" alt="Lucky Meteor Games logo">
+      <span class="sr-only">luckymeteorgames.com</span>
     </a>
-    <button class="navbar-toggler navbar-toggler-s3p3" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon navbar-toggler-icon-k8w2"><i class="fas fas-i3o7 fa-bars fa-bars-k2s8"></i></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
     </button>
 
-    <div class="collapse collapse-s1p8 navbar-collapse navbar-collapse-u8n2 justify-content-end justify-content-end-q4o3" id="navMenu">
-      <ul class="navbar-nav navbar-nav-s2k8 mb-2 mb-2-s6k8 mb-lg-0 mb-lg-0-w4j8 align-items-lg-center align-items-lg-center-u1g7">
-        <li class="nav-item nav-item-t0x4"><a class="nav-link nav-link-o9u4" href="/">Home</a></li>
-        <li class="nav-item nav-item-t0x4"><a class="nav-link nav-link-o9u4 active active-o1t1" href="/play">Play</a></li>
-        <li class="nav-item nav-item-t0x4"><a class="nav-link nav-link-o9u4" href="/#contact">Contact</a></li>
-        <li class="nav-item nav-item-t0x4"><a class="nav-link nav-link-o9u4" href="/disclaimer">Disclaimer</a></li>
-        <li class="nav-item nav-item-t0x4"><a class="nav-link nav-link-o9u4" href="/privacy-policy">Privacy</a></li>
-        <li class="nav-item nav-item-t0x4"><a class="nav-link nav-link-o9u4" href="/terms-and-conditions">Terms</a></li>
+    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+      <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link lmg-navlink-e1um" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link lmg-navlink-e1um active" href="/play">Play</a></li>
+        <li class="nav-item"><a class="nav-link lmg-navlink-e1um" href="/#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link lmg-navlink-e1um" href="/disclaimer">Disclaimer</a></li>
+        <li class="nav-item"><a class="nav-link lmg-navlink-e1um" href="/privacy-policy">Privacy</a></li>
+        <li class="nav-item"><a class="nav-link lmg-navlink-e1um" href="/terms-and-conditions">Terms</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <main>
-  <!-- Play gallery of external demos -->
-  <section class="jackpothub-cloud-play jackpothub-cloud-play-n0x6">
-    <div class="container container-n5s9">
-      <h1 class="section-title section-title-a7o7">Play demos</h1>
-      <p class="section-sub section-sub-x7g6">Free-to-play social casino style experiences. External embeds, no deposits or prizes.</p>
+  <section class="lmg-section-s3vm">
+    <div class="lmg-container-y9sd text-center">
+      <h1 class="lmg-title-r4ne">Play Lucky Meteor selections</h1>
+      <p class="lmg-sub-w8cl">Free-to-play, social casino-style experiences. Embedded launches only—no deposits or prizes.</p>
 
-      <div class="game-wrapper game-wrapper-e0p2">
-        <div class="w-100 w-100-h5f9">
-          <div class="pill pill-a5k8 accent accent-l0a5">Live preview</div>
-          <div class="game-frame game-frame-d2c1">
+      <div class="lmg-grid-ux1p">
+        <div class="lmg-card-m5re">
+          <i class="fa-solid fa-heart lmg-icon-v2yz"></i>
+          <h4>Curated picks</h4>
+          <p class="lmg-sub-w8cl" style="max-width:none">Handful of ready-to-embed sessions tuned for fast load and clean presentation.</p>
+        </div>
+        <div class="lmg-card-m5re">
+          <i class="fa-solid fa-mobile-screen-button lmg-icon-v2yz"></i>
+          <h4>Mobile friendly</h4>
+          <p class="lmg-sub-w8cl" style="max-width:none">Layouts adapt to phones and tablets so campaigns stay sharp on the go.</p>
+        </div>
+        <div class="lmg-card-m5re">
+          <i class="fa-solid fa-shield-check lmg-icon-v2yz"></i>
+          <h4>Safety first</h4>
+          <p class="lmg-sub-w8cl" style="max-width:none">Clear 18+ messaging and no payment flows—entertainment only.</p>
+        </div>
+      </div>
+
+      <div class="lmg-embedwrap-k9tj">
+        <div class="w-100" style="max-width:920px">
+          <div class="lmg-pill-r5gj" style="display:inline-flex; margin-bottom:0.8rem">Live experience</div>
+          <div class="lmg-embed-box-s4hp">
             <iframe src="https://released.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=stadiumofriches&lang=en_GB&practice=1&channel=desktop&demo=2&refresh=1763688384036" title="Stadium of Riches" allowfullscreen loading="lazy"></iframe>
           </div>
-          <p class="game-caption game-caption-y9s6">Embedded demo: Stadium of Riches (external launch).</p>
+          <p class="lmg-caption-d3uz">Embedded experience: Stadium of Riches (external launch).</p>
         </div>
       </div>
 
-      <div class="game-wrapper game-wrapper-e0p2">
-        <div class="w-100 w-100-h5f9">
-          <div class="pill pill-a5k8 accent accent-l0a5">Mobile-friendly preview</div>
-          <div class="game-frame game-frame-d2c1">
+      <div class="lmg-embedwrap-k9tj">
+        <div class="w-100" style="max-width:920px">
+          <div class="lmg-pill-r5gj" style="display:inline-flex; margin-bottom:0.8rem">Mobile-first view</div>
+          <div class="lmg-embed-box-s4hp">
             <iframe src="https://released.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=ringsofprosperity&lang=en_GB&practice=1&channel=mobile&demo=2&refresh=1763688502976" title="Rings of Prosperity" allowfullscreen loading="lazy"></iframe>
           </div>
-          <p class="game-caption game-caption-y9s6">Embedded demo: Rings of Prosperity (external launch).</p>
+          <p class="lmg-caption-d3uz">Embedded experience: Rings of Prosperity (external launch).</p>
         </div>
       </div>
 
-      <div class="game-wrapper game-wrapper-e0p2">
-        <div class="w-100 w-100-h5f9">
-          <div class="pill pill-a5k8 accent accent-l0a5">Low-motion preview</div>
-          <div class="game-frame game-frame-d2c1">
+      <div class="lmg-embedwrap-k9tj">
+        <div class="w-100" style="max-width:920px">
+          <div class="lmg-pill-r5gj" style="display:inline-flex; margin-bottom:0.8rem">Low-motion view</div>
+          <div class="lmg-embed-box-s4hp">
             <iframe src="https://released.playngonetwork.com/casino/ContainerLauncher?pid=2&gid=lawnndisorder&lang=en_GB&practice=1&channel=mobile&demo=2&refresh=1763688570336" title="Lawn n Disorder" allowfullscreen loading="lazy"></iframe>
           </div>
-          <p class="game-caption game-caption-y9s6">Embedded demo: Lawn n Disorder (external launch).</p>
+          <p class="lmg-caption-d3uz">Embedded experience: Lawn n Disorder (external launch).</p>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Footer -->
-<footer class="jackpothub-cloud-footer jackpothub-cloud-footer-e3t4">
-  <div class="container container-n5s9">
-    <div class="footer-brand footer-brand-b0c2">
-      <img class="brand-logo brand-logo-y2l5" src="../assets/img.png" alt="JackpotHub logo">
-      <span class="sr-only sr-only-l6n5">JackpotHub.cloud</span>
+<footer class="lmg-footer-f6at">
+  <div class="lmg-container-y9sd">
+    <div class="lmg-footerbrand-i3ve">
+      <img class="lmg-logo-ks9d" src="../assets/img.png" alt="Lucky Meteor Games logo">
+      <span class="sr-only">luckymeteorgames.com</span>
     </div>
 
-    <ul class="footer-links footer-links-o9a5">
+    <ul class="lmg-footerlinks-l9cu">
       <li><a href="/">Home</a></li>
       <li><a href="/play">Play</a></li>
       <li><a href="/#contact">Contact</a></li>
@@ -363,14 +238,14 @@ img{max-width:100%; display:block}
       <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
     </ul>
 
-    <p class="footer-copy footer-copy-f9e9">
-      © <span data-year></span> JackpotHub.cloud
+    <p class="lmg-footercopy-y0va">
+      © <span data-year></span> luckymeteorgames.com
     </p>
   </div>
 </footer>
 
-<button id="hubScrollTop" class="jackpothub-cloud-scroll jackpothub-cloud-scroll-b6z2" aria-label="Scroll to top">
-  <i class="fas fas-i3o7 fa-chevron-up fa-chevron-up-v5k2"></i>
+<button id="hubScrollTop" class="lmg-scroll-x0fz" aria-label="Scroll to top">
+  <i class="fas fa-chevron-up"></i>
 </button>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
